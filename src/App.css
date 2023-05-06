@@ -1,0 +1,141 @@
+.wrapper {
+	margin-top: 8em;
+}
+.container {
+	width: 80%;
+	min-width: 40rem;
+	max-width: 70rem;
+	/* outline: 1px solid coral; */
+
+	margin-inline: auto;
+
+	display: grid;
+	grid-template-columns: 6fr 4fr;
+	gap: 3rem;
+}
+
+h1 {
+	font-size: 3.5rem;
+	text-align: center;
+}
+h2 {
+	font-size: 2rem;
+}
+
+.searchSection {
+	display: flex;
+	flex-direction: column;
+	gap: 0.2em;
+}
+label {
+	font-size: 1.3rem;
+	font-weight: 700;
+}
+input {
+	border: 1px solid hsl(0, 0%, 60%);
+	background-color: transparent;
+	border-radius: 0.2em;
+	padding: 0.4em 0.6em;
+	/* width: max-content; */
+
+	color: inherit;
+	font-size: 1.3rem;
+}
+input#searchIssues {
+	min-width: 45%;
+}
+main {
+	margin-top: 2rem;
+	display: grid;
+	gap: 2rem;
+}
+
+.issueList {
+	display: grid;
+	gap: 2em;
+}
+.issueSection {
+	display: grid;
+	gap: 2em;
+}
+.issueItem {
+	display: grid;
+	grid-template-columns: 0.5fr 10fr 0.5fr 0.5fr;
+	align-items: center;
+	gap: 0.5em;
+
+	border: 1px solid hsl(0, 0%, 60%);
+	border-radius: 0.3em;
+	max-width: 40rem;
+	padding: 0.6em 1em;
+}
+.issueIcon {
+	color: hsl(171, 99%, 29%);
+	font-size: 1.8rem;
+	margin-right: 0.2em;
+}
+.issueIcon.done {
+	color: hsl(0, 72%, 40%);
+}
+.issueTitle {
+	font-size: 1.3rem;
+	/* color: hsl(143, 93%, 11%); */
+	font-weight: 800;
+	display: inline;
+}
+.issueLabel {
+	--color: 0, 0, 13%;
+
+	border: 1px solid currentColor;
+	border-radius: 50rem;
+	padding: 0.1em 0.3em;
+	/* margin-top: 0.1em; */
+	font-size: 0.9rem;
+	font-weight: 800;
+	margin-left: 1em;
+
+	color: hsl(var(--color));
+	background-color: hsla(var(--color), 0.1);
+}
+.issueLabel.green {
+	--color: 171, 99%, 59%;
+	color: #01937c;
+}
+.issueLabel.gray {
+	--color: 180, 7%, 49%;
+	color: hsl(180, 7%, 19%);
+}
+.issueLabel.purple {
+	--color: 271, 51%, 69%;
+	color: #914b8b;
+}
+.issueLabel.red {
+	--color: 0, 59%, 71%;
+	color: hsl(0, 59%, 51%);
+}
+.issueLabel.cyan {
+	--color: 193, 78%, 65%;
+	color: hsl(193, 78%, 45%);
+}
+.issueLabel.yellow {
+	--color: 44, 72%, 47%;
+	color: #dc8449;
+}
+.issueLabel.blue {
+	--color: 201, 100%, 79%;
+	color: hsl(201, 100%, 29%);
+}
+.issueAssignee {
+	border-radius: 50rem;
+	width: 2.2em;
+	margin: 0 0.8rem;
+}
+.issueCommentCount {
+	display: flex;
+	align-items: flex-start;
+	gap: 0.2em;
+}
+.commentIcon {
+	font-size: 1.3rem;
+	margin-top: 0.2em;
+}
