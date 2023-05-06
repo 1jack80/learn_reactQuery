@@ -1,9 +1,20 @@
-import { useState } from "react";
-import { GoComment, GoIssueOpened } from "react-icons/go";
 import "./App.css";
+import { ListItem } from "./ListItem";
+import { useQuery } from "@tanstack/react-query";
 
 function App() {
-	const [count, setCount] = useState(0);
+	const issueQuery = useQuery({
+		queryKey: ["issues"],
+		queryFn: () => {
+			return fetch("https:/ui.dev/api/courses/react-query/issues").then((res) =>
+				res.json()
+			);
+		},
+	});
+
+	if (!issueQuery.isLoading) {
+		console.log(issueQuery.data);
+	}
 
 	return (
 		<div className="wrapper">
@@ -23,7 +34,13 @@ function App() {
 					<section className="issueSection">
 						<h2>Issues List</h2>
 						<ul className="issueList">
-							<ListItem />
+							{issueQuery.isLoading ? (
+								<p>Loading...</p>
+							) : issueQuery.isError ? (
+								issueQuery.error.mesasge
+							) : (
+								<ListItem />
+							)}
 						</ul>
 					</section>
 				</main>
@@ -34,29 +51,3 @@ function App() {
 }
 
 export default App;
-function ListItem() {
-	return (
-		<li className="issueItem">
-			<span className="">
-				<GoIssueOpened className="issueIcon" />
-			</span>
-			<div>
-				<header className="issueHeader">
-					<h4 className="issueTitle">JQuery looks wierd on weekends</h4>
-					<span className="issueLabel ">question</span>
-				</header>
-				<p className="issueDetails">#998 opened 3 hours ago by Tanner</p>
-			</div>
-			<img
-				className="issueAssignee"
-				src="https://res.cloudinary.com/uidotdev/image/twitter_name/tylermcginnis"
-				alt="Avatar of assignee"
-			/>
-
-			<div className="issueCommentCount">
-				<GoComment className="commentIcon" />
-				<span className="commentCount">281</span>
-			</div>
-		</li>
-	);
-}
