@@ -12,10 +12,6 @@ function App() {
 		},
 	});
 
-	if (!issueQuery.isLoading) {
-		console.log(issueQuery.data);
-	}
-
 	return (
 		<div className="wrapper">
 			<h1>Issue Tracker</h1>
@@ -39,7 +35,18 @@ function App() {
 							) : issueQuery.isError ? (
 								issueQuery.error.mesasge
 							) : (
-								<ListItem />
+								issueQuery.data.map((issue) => (
+									<ListItem
+										assignee={issue.assignee}
+										createdBy={issue.createdBy}
+										createdDate={issue.createdDate}
+										labels={issue.labels}
+										number={issue.number}
+										title={issue.title}
+										commentCount={issue.comments.length}
+										key={issue.id}
+									/>
+								))
 							)}
 						</ul>
 					</section>
