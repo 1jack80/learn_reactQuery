@@ -2,7 +2,7 @@ import { GoComment, GoIssueOpened } from "react-icons/go";
 import { relativeDate } from "./helpers/relativeDate";
 import { useUserData } from "./helpers/useUserData";
 
-export function ListItem({ createdBy, createdDate, title, labels, number, assignee }) {
+export function IssueItem({ createdBy, createdDate, title, labels, number, assignee }) {
 	const createdByUser = useUserData(createdBy);
 
 	const assigneeUser = useUserData(assignee);
