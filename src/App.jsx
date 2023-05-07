@@ -51,7 +51,15 @@ function App() {
 						</ul>
 					</section>
 				</main>
-				<aside></aside>
+				<aside>
+					<section className="labelsSection">
+						<h3>Labels</h3>
+						<ul></ul>
+					</section>
+					<section className="statusSection">
+						<h3>Status</h3>
+					</section>
+				</aside>
 			</div>
 		</div>
 	);

@@ -89,7 +89,6 @@ main {
 	border: 1px solid currentColor;
 	border-radius: 50rem;
 	padding: 0.1em 0.3em;
-	/* margin-top: 0.1em; */
 	font-size: 0.9rem;
 	font-weight: 800;
 	margin-left: 1em;
@@ -97,31 +96,31 @@ main {
 	color: hsl(var(--color));
 	background-color: hsla(var(--color), 0.1);
 }
-.issueLabel.green {
+.green {
 	--color: 171, 99%, 59%;
 	color: #01937c;
 }
-.issueLabel.gray {
+.gray {
 	--color: 180, 7%, 49%;
 	color: hsl(180, 7%, 19%);
 }
-.issueLabel.purple {
+.purple {
 	--color: 271, 51%, 69%;
 	color: #914b8b;
 }
-.issueLabel.red {
+.red {
 	--color: 0, 59%, 71%;
 	color: hsl(0, 59%, 51%);
 }
-.issueLabel.cyan {
+.cyan {
 	--color: 193, 78%, 65%;
 	color: hsl(193, 78%, 45%);
 }
-.issueLabel.yellow {
+.yellow {
 	--color: 44, 72%, 47%;
 	color: #dc8449;
 }
-.issueLabel.blue {
+.blue {
 	--color: 201, 100%, 79%;
 	color: hsl(201, 100%, 29%);
 }
@@ -138,4 +137,24 @@ main {
 .commentIcon {
 	font-size: 1.3rem;
 	margin-top: 0.2em;
+}
+
+aside {
+	display: grid;
+	align-content: flex-start;
+	gap: 4rem;
+}
+aside h3 {
+	font-size: 1.5rem;
+}
+
+.labelsSection {
+	margin-top: 3.5rem;
+}
+.labelsSection ul {
+	display: flex;
+	flex-wrap: wrap;
+	max-width: 26rem;
+
+	gap: 0.4em;
 }
