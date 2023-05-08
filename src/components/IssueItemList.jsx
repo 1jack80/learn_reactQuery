@@ -1,4 +1,4 @@
-import { IssueItem } from "./ListItem";
+import { IssueItem } from "./issueItem.jsx";
 import { useQuery } from "@tanstack/react-query";
 
 export function IssueItemList() {
