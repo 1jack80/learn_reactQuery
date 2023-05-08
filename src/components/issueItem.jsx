@@ -1,10 +1,10 @@
 import { GoComment, GoIssueOpened } from "react-icons/go";
 import { relativeDate } from "../helpers/relativeDate.js";
 import { useUserData } from "../helpers/useUserData.js";
+import { useLabelData } from "../helpers/useLabelData.jsx";
 
 export function IssueItem({ createdBy, createdDate, title, labels, number, assignee }) {
   const createdByUser = useUserData(createdBy);
-
   const assigneeUser = useUserData(assignee);
 
   return (
@@ -16,11 +16,10 @@ export function IssueItem({ createdBy, createdDate, title, labels, number, assig
         <header className="issueHeader">
           <h4 className="issueTitle">{title}</h4>
           {labels.map((label) => (
-            <span
-              className="issueLabel "
-              key={label}>
-              {label}
-            </span>
+            <LabelObj
+              key={label}
+              labelId={label}
+            />
           ))}
         </header>
         <small className="issueDetails">
@@ -39,4 +38,12 @@ export function IssueItem({ createdBy, createdDate, title, labels, number, assig
       </div>
     </li>
   );
+}
+
+function LabelObj({ labelId }) {
+  const labelQuery = useLabelData();
+  if (labelQuery.isLoading) return null;
+  const labelObj = labelQuery.data.find((l) => l.id === labelId);
+  if (!labelObj) return null;
+  return <span className={`issueLabel ${labelObj.color}`}> {labelObj.name} </span>;
 }

@@ -9,5 +9,6 @@ export function useLabelData() {
       );
     },
   });
+
   return labelQuery;
 }
