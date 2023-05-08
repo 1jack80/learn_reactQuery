@@ -88,7 +88,10 @@ main {
   margin-right: 1ex;
 }
 .issueLabel {
-  --color: 0, 0, 13%;
+  /* --color: 0, 0, 13%; */
+  --h: 0;
+  --s: 0%;
+  --l: 13%;
 
   border: 1px solid currentColor;
   display: inline-block;
@@ -97,35 +100,57 @@ main {
   font-size: 0.9rem;
   font-weight: 800;
 
-  color: hsl(var(--color));
-  background-color: hsla(var(--color), 0.1);
+  color: hsl(var(--h), var(--s), var(--l));
+  background-color: hsla(var(--h), var(--s), var(--l), 0.05);
 }
 .lime {
-  --color: 171, 99%, 59%;
-  color: #01937c;
+  --h: 171;
+  --s: 99%;
+  --l: 29%;
+  /* --color: 171, 99%, 59%; */
+  /* color: hsl(171, 99%, 29%); */
 }
 .white {
-  --color: 180, 7%, 79%;
-  color: hsl(180, 7%, 19%);
+  --h: 180;
+  --s: 7%;
+  --l: 29%;
+  /* --color: 180, 7%, 79%; */
+  /* color: hsl(180, 7%, 19%); */
 }
 .rebeccapurple {
-  --color: 271, 51%, 69%;
-  color: #914b8b;
+  --h: 271;
+  --s: 51%;
+  --l: 49%;
+  /* --color: 271, 51%, 69%; */
+  /* color: hsl(305, 32%, 43%); */
 }
 .red {
-  --color: 0, 59%, 71%;
-  color: hsl(0, 59%, 51%);
+  --h: 0;
+  --s: 59%;
+  --l: 51%;
+  /* --color: 0, 59%, 71%; */
+  /* color: hsl(0, 59%, 51%); */
 }
 .cyan {
-  --color: 193, 78%, 65%;
-  color: hsl(193, 78%, 45%);
+  --h: 184;
+  --s: 67%;
+  --l: 51%;
+  background-color: hsla(var(--h), var(--s), var(--l), 0.01);
+  /* --color: 193, 78%, 65%; */
+  /* color: hsl(184, 100%, 51%); */
 }
 .orange {
-  --color: 44, 72%, 47%;
-  color: #dc8449;
+  --h: 24;
+  --s: 68%;
+  --l: 57%;
+  /* --color: 44, 72%, 47%; */
+  /* color: hsl(24, 68%, 57%); */
 }
 .blue {
-  --color: 201, 100%, 79%;
+  --h: 201;
+  --s: 100%;
+  --l: 39%;
+  /* --color: 201, 100%, 79%; */
   color: hsl(201, 100%, 29%);
 }
 .issueAssignee {
