@@ -11,11 +11,12 @@ export function LabelList() {
       ) : labels.isSuccess ? (
         <div>
           {labels.data.map((label) => (
-            <LabelFilter
+            <button
+              // onClick={}
               key={label.id}
-              name={label.name}
-              color={label.color}
-            />
+              className={`issueLabel ${label.color}`}>
+              {label.name}
+            </button>
           ))}
         </div>
       ) : (
