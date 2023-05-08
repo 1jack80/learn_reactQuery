@@ -1,5 +1,5 @@
 import { useLabelData } from "../helpers/useLabelData";
-import { LabelFilter } from "./Label";
+import { LabelFilter } from "./LabelFilter";
 
 export function LabelList() {
   const labels = useLabelData();
