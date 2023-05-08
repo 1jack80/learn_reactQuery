@@ -1,27 +1,24 @@
 import "./App.css";
-import { IssueItemList } from "./IssueItemList";
+import { IssueItemList } from "./components/IssueItemList";
+import { Label } from "./components/Label";
+import { useLabelData } from "./helpers/useLabelData";
 
 function App() {
-	return (
-		<div className="wrapper">
-			<h1>Issue Tracker</h1>
-			<div className="container">
-				<main>
-					<section className="searchSection">
-						<label htmlFor="searchIssue">Search Issues</label>
-						<input
-							type="search"
-							name="searchIssues"
-							id="searchIssues"
-							placeholder="Search"
-						/>
-					</section>
+  return (
+    <div className="wrapper">
+      <h1>Issue Tracker</h1>
+      <div className="container">
+        <main>
+          <section className="searchSection">
+            <label htmlFor="searchIssue">Search Issues</label>
+            <input
+              type="search"
+              name="searchIssues"
+              id="searchIssues"
+              placeholder="Search"
+            />
+          </section>
 
-					<section className="issueSection">
-						<h2>Issues List</h2>
-						<IssueItemList />
-					</section>
-				</main>
 				<aside>
 					<section className="labelsSection">
 						<h3>Labels</h3>
@@ -34,6 +31,11 @@ function App() {
 			</div>
 		</div>
 	);
+          <section className="issueSection">
+            <h2>Issues List</h2>
+            <IssueItemList />
+          </section>
+        </main>
 }
 
 export default App;
