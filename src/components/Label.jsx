@@ -1,11 +1,11 @@
 import { useLabelData } from "../helpers/useLabelData";
 
-export const Label = (labelId) => {
-  const labelData = useLabelData(labelId);
+export const Label = ({ name, color }) => {
+  const labelData = useLabelData();
   return (
     <>
       {labelData.isSuccess ? (
-        <button className={`issueItem ${labelData.color}`}>{labelData.name}</button>
+        <button className={`issueLabel ${color}`}>{name}</button>
       ) : (
         <></>
       )}

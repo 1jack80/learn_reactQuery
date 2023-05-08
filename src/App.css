@@ -1,160 +1,172 @@
 .wrapper {
-	margin-top: 8em;
+  margin-top: 8em;
 }
 .container {
-	width: 80%;
-	min-width: 40rem;
-	max-width: 70rem;
-	/* outline: 1px solid coral; */
+  width: 80%;
+  min-width: 40rem;
+  max-width: 70rem;
+  /* outline: 1px solid coral; */
 
-	margin-inline: auto;
+  margin-inline: auto;
 
-	display: grid;
-	grid-template-columns: 6fr 4fr;
-	gap: 3rem;
+  display: grid;
+  grid-template-columns: 6fr 4fr;
+  gap: 3rem;
 }
 
 h1 {
-	font-size: 3.5rem;
-	text-align: center;
+  font-size: 3.5rem;
+  text-align: center;
 }
 h2 {
-	font-size: 2rem;
+  font-size: 2rem;
 }
 
 .searchSection {
-	display: flex;
-	flex-direction: column;
-	gap: 0.2em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2em;
 }
 label {
-	font-size: 1.3rem;
-	font-weight: 700;
+  font-size: 1.3rem;
+  font-weight: 700;
 }
 input {
-	border: 1px solid hsl(0, 0%, 60%);
-	background-color: transparent;
-	border-radius: 0.2em;
-	padding: 0.4em 0.6em;
-	/* width: max-content; */
+  border: 1px solid hsl(0, 0%, 60%);
+  background-color: transparent;
+  border-radius: 0.2em;
+  padding: 0.4em 0.6em;
+  /* width: max-content; */
 
-	color: inherit;
-	font-size: 1.3rem;
+  color: inherit;
+  font-size: 1.3rem;
 }
 input#searchIssues {
-	min-width: 45%;
+  min-width: 45%;
 }
 main {
-	margin-top: 2rem;
-	display: grid;
-	gap: 2rem;
+  margin-top: 2rem;
+  display: grid;
+  gap: 2rem;
 }
 
 .issueList {
-	display: grid;
-	gap: 2em;
+  display: grid;
+  gap: 2em;
 }
 .issueSection {
-	display: grid;
-	gap: 2em;
+  display: grid;
+  gap: 2em;
 }
 .issueItem {
-	display: grid;
-	grid-template-columns: 0.5fr 10fr 0.5fr 0.5fr;
-	align-items: center;
-	gap: 0.5em;
+  display: grid;
+  grid-template-columns: 0.5fr 10fr 0.5fr 0.5fr;
+  align-items: center;
+  gap: 0.5em;
 
-	border: 1px solid hsl(0, 0%, 60%);
-	border-radius: 0.3em;
-	max-width: 40rem;
-	padding: 0.6em 1em;
+  border: 1px solid hsl(0, 0%, 60%);
+  border-radius: 0.3em;
+  max-width: 40rem;
+  padding: 0.6em 1em;
 }
 .issueIcon {
-	color: hsl(171, 99%, 29%);
-	font-size: 1.8rem;
-	margin-right: 0.2em;
+  color: hsl(171, 99%, 29%);
+  font-size: 1.8rem;
+  margin-right: 0.2em;
 }
 .issueIcon.done {
-	color: hsl(0, 72%, 40%);
+  color: hsl(0, 72%, 40%);
 }
 .issueTitle {
-	font-size: 1.3rem;
-	/* color: hsl(143, 93%, 11%); */
-	font-weight: 800;
-	display: inline;
+  font-size: 1.3rem;
+  /* color: hsl(143, 93%, 11%); */
+  font-weight: 800;
+  display: inline;
 }
 .issueLabel {
-	--color: 0, 0, 13%;
+  --color: 0, 0, 13%;
 
-	border: 1px solid currentColor;
-	border-radius: 50rem;
-	padding: 0.1em 0.3em;
-	font-size: 0.9rem;
-	font-weight: 800;
-	margin-left: 1em;
+  border: 1px solid currentColor;
+  border-radius: 50rem;
+  padding: 0.1em 0.3em;
+  font-size: 0.9rem;
+  font-weight: 800;
+  margin-left: 1em;
 
-	color: hsl(var(--color));
-	background-color: hsla(var(--color), 0.1);
+  color: hsl(var(--color));
+  background-color: hsla(var(--color), 0.1);
 }
-.green {
-	--color: 171, 99%, 59%;
-	color: #01937c;
+.lime {
+  --color: 171, 99%, 59%;
+  color: #01937c;
 }
-.gray {
-	--color: 180, 7%, 49%;
-	color: hsl(180, 7%, 19%);
+.white {
+  --color: 180, 7%, 79%;
+  color: hsl(180, 7%, 19%);
 }
-.purple {
-	--color: 271, 51%, 69%;
-	color: #914b8b;
+.rebeccapurple {
+  --color: 271, 51%, 69%;
+  color: #914b8b;
 }
 .red {
-	--color: 0, 59%, 71%;
-	color: hsl(0, 59%, 51%);
+  --color: 0, 59%, 71%;
+  color: hsl(0, 59%, 51%);
 }
 .cyan {
-	--color: 193, 78%, 65%;
-	color: hsl(193, 78%, 45%);
+  --color: 193, 78%, 65%;
+  color: hsl(193, 78%, 45%);
 }
-.yellow {
-	--color: 44, 72%, 47%;
-	color: #dc8449;
+.orange {
+  --color: 44, 72%, 47%;
+  color: #dc8449;
 }
 .blue {
-	--color: 201, 100%, 79%;
-	color: hsl(201, 100%, 29%);
+  --color: 201, 100%, 79%;
+  color: hsl(201, 100%, 29%);
 }
 .issueAssignee {
-	border-radius: 50rem;
-	width: 2.2em;
-	margin: 0 0.8rem;
+  border-radius: 50rem;
+  width: 2.2em;
+  margin: 0 0.8rem;
 }
 .issueCommentCount {
-	display: flex;
-	align-items: flex-start;
-	gap: 0.2em;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.2em;
 }
 .commentIcon {
-	font-size: 1.3rem;
-	margin-top: 0.2em;
+  font-size: 1.3rem;
+  margin-top: 0.2em;
 }
 
 aside {
-	display: grid;
-	align-content: flex-start;
-	gap: 4rem;
+  display: grid;
+  align-content: flex-start;
+  gap: 3rem;
 }
 aside h3 {
-	font-size: 1.5rem;
+  font-size: 1.5rem;
 }
 
 .labelsSection {
-	margin-top: 3.5rem;
+  margin-top: 3.5rem;
 }
-.labelsSection ul {
-	display: flex;
-	flex-wrap: wrap;
-	max-width: 26rem;
+button.issueLabel {
+  font-size: 1rem;
+  padding: 0.2em 0.6em;
+  margin: 0;
 
-	gap: 0.4em;
+  cursor: pointer;
+  transition: 200ms cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+button.issueLabel:hover {
+  scale: 1.1;
+}
+.labelsSection div {
+  margin-top: 0.52rem;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 26rem;
+
+  gap: 1rem;
 }

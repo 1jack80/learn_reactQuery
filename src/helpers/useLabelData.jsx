@@ -1,14 +1,13 @@
 import { useQuery } from "@tanstack/react-query";
 
-export function useLabelData(labelId) {
-  labelQuery = useQuery({
-    queryKey: ["label", labelId],
+export function useLabelData() {
+  const labelQuery = useQuery({
+    queryKey: ["labels"],
     queryFn: () => {
-      return fetch(`https://ui.dev/api/courses/react-query/labels/${labelId}`).then(
-        (res) => res.json()
+      return fetch("https://ui.dev/api/courses/react-query/labels").then((res) =>
+        res.json()
       );
     },
-    enabled: !!labelId,
   });
   return labelQuery;
 }
