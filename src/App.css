@@ -1,5 +1,6 @@
 .wrapper {
   margin-top: 8em;
+  padding-bottom: 9rem;
 }
 .container {
   width: 80%;
@@ -87,8 +88,9 @@ main {
   --color: 0, 0, 13%;
 
   border: 1px solid currentColor;
+  display: inline-block;
   border-radius: 50rem;
-  padding: 0.1em 0.3em;
+  padding: 0.1em 0.5em;
   font-size: 0.9rem;
   font-weight: 800;
   margin-left: 1em;
