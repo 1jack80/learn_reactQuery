@@ -3,7 +3,15 @@ import { relativeDate } from "../helpers/relativeDate.js";
 import { useUserData } from "../helpers/useUserData.js";
 import { useLabelData } from "../helpers/useLabelData.jsx";
 
-export function IssueItem({ createdBy, createdDate, title, labels, number, assignee }) {
+export function IssueItem({
+  commentCount,
+  createdBy,
+  createdDate,
+  title,
+  labels,
+  number,
+  assignee,
+}) {
   const createdByUser = useUserData(createdBy);
   const assigneeUser = useUserData(assignee);
 
@@ -34,7 +42,7 @@ export function IssueItem({ createdBy, createdDate, title, labels, number, assig
 
       <div className="issueCommentCount">
         <GoComment className="commentIcon" />
-        <span className="commentCount"></span>
+        <span className="commentCount">{commentCount}</span>
       </div>
     </li>
   );

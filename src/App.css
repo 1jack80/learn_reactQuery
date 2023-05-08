@@ -78,11 +78,14 @@ main {
 .issueIcon.done {
   color: hsl(0, 72%, 40%);
 }
+.issueHeader {
+}
 .issueTitle {
   font-size: 1.3rem;
   /* color: hsl(143, 93%, 11%); */
   font-weight: 800;
   display: inline;
+  margin-right: 1ex;
 }
 .issueLabel {
   --color: 0, 0, 13%;
@@ -93,7 +96,6 @@ main {
   padding: 0.1em 0.5em;
   font-size: 0.9rem;
   font-weight: 800;
-  margin-left: 1em;
 
   color: hsl(var(--color));
   background-color: hsla(var(--color), 0.1);

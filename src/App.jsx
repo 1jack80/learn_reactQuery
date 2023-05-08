@@ -26,9 +26,7 @@ function App() {
         <aside>
           <section className="labelsSection">
             <h3>Labels</h3>
-            <ul>
-              <LabelList />
-            </ul>
+            <ul>{/* <LabelList /> */}</ul>
           </section>
           <section className="statusSection">
             <h3>Status</h3>
