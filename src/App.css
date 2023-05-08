@@ -113,7 +113,7 @@ main {
 .white {
   --h: 180;
   --s: 7%;
-  --l: 29%;
+  --l: 19%;
   /* --color: 180, 7%, 79%; */
   /* color: hsl(180, 7%, 19%); */
 }
@@ -179,6 +179,11 @@ aside h3 {
 
 .labelsSection {
   margin-top: 3.5rem;
+}
+button.issueLabel:not(.selected) {
+  /* color: hsl(var(--h), calc(var(--s) * 0.8), calc(var(--l))); */
+  /* filter: brightness(0.6); */
+  opacity: 0.4;
 }
 button.issueLabel {
   font-size: 1rem;

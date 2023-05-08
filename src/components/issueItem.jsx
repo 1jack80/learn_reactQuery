@@ -31,7 +31,7 @@ export function IssueItem({
           ))}
         </header>
         <small className="issueDetails">
-          #${number} opened {relativeDate(createdDate)} by{" "}
+          #{number} opened {relativeDate(createdDate)} by{" "}
           {createdByUser.isSuccess ? createdByUser.data.name : ""}
         </small>
       </div>

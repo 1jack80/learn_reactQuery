@@ -1,12 +1,13 @@
 import { IssueItem } from "./issueItem.jsx";
 import { useQuery } from "@tanstack/react-query";
 
-export function IssueItemList() {
+export function IssueItemList({ labelFilters }) {
   const issueQuery = useQuery({
-    queryKey: ["issues"],
+    queryKey: ["issues", { labelFilters }],
     queryFn: () => {
-      return fetch("https:/ui.dev/api/courses/react-query/issues").then((res) =>
-        res.json()
+      const filterString = labelFilters.map((label) => `labels[]=${label}`).join("&");
+      return fetch(`https:/ui.dev/api/courses/react-query/issues?${filterString}`).then(
+        (res) => res.json()
       );
     },
   });

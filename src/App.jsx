@@ -1,8 +1,18 @@
+import { useState } from "react";
 import "./App.css";
 import { IssueItemList } from "./components/IssueItemList";
 import { LabelList } from "./components/LabelList";
 
 function App() {
+  const [labelFilters, setLabelFilters] = useState([]);
+
+  function toggleFilter(labelId) {
+    setLabelFilters((currentFilters) => {
+      return currentFilters.includes(labelId)
+        ? currentFilters.filter((label) => label != labelId)
+        : currentFilters.concat(labelId);
+    });
+  }
   return (
     <div className="wrapper">
       <h1>Issue Tracker</h1>
@@ -20,14 +30,17 @@ function App() {
 
           <section className="issueSection">
             <h2>Issues List</h2>
-            <IssueItemList />
+            <IssueItemList labelFilters={labelFilters} />
           </section>
         </main>
         <aside>
           <section className="labelsSection">
             <h3>Labels</h3>
             <ul>
-              <LabelList />
+              <LabelList
+                labelFilters={labelFilters}
+                toggle={toggleFilter}
+              />
             </ul>
           </section>
           <section className="statusSection">

@@ -1,7 +1,6 @@
 import { useLabelData } from "../helpers/useLabelData";
-import { LabelFilter } from "./LabelFilter";
 
-export function LabelList() {
+export function LabelList({ labelFilters, toggle }) {
   const labels = useLabelData();
 
   return (
@@ -12,9 +11,11 @@ export function LabelList() {
         <div>
           {labels.data.map((label) => (
             <button
-              // onClick={}
+              onClick={() => toggle(label.id)}
               key={label.id}
-              className={`issueLabel ${label.color}`}>
+              className={`issueLabel ${label.color} ${
+                labelFilters.includes(label.id) ? "selected" : ""
+              }`}>
               {label.name}
             </button>
           ))}
