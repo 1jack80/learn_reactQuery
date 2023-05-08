@@ -1,5 +1,5 @@
 import { useLabelData } from "../helpers/useLabelData";
-import { Label } from "./Label";
+import { LabelFilter } from "./Label";
 
 export function LabelList() {
   const labels = useLabelData();
@@ -11,7 +11,7 @@ export function LabelList() {
       ) : labels.isSuccess ? (
         <div>
           {labels.data.map((label) => (
-            <Label
+            <LabelFilter
               key={label.id}
               name={label.name}
               color={label.color}

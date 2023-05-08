@@ -1,11 +1,15 @@
 import { useLabelData } from "../helpers/useLabelData";
 
-export const Label = ({ name, color }) => {
+export const LabelFilter = ({ name, color }) => {
   const labelData = useLabelData();
   return (
     <>
       {labelData.isSuccess ? (
-        <button className={`issueLabel ${color}`}>{name}</button>
+        <button
+          onClick={filterIssuesList(name)}
+          className={`issueLabel ${color}`}>
+          {name}
+        </button>
       ) : (
         <></>
       )}
