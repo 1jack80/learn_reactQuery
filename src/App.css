@@ -78,8 +78,6 @@ main {
 .issueIcon.done {
   color: hsl(0, 72%, 40%);
 }
-.issueHeader {
-}
 .issueTitle {
   font-size: 1.3rem;
   /* color: hsl(143, 93%, 11%); */
@@ -203,4 +201,18 @@ button.issueLabel:hover {
   max-width: 26rem;
 
   gap: 1rem;
+}
+
+.status-select {
+  background: inherit;
+  /* color: var(--yellow); */
+  border: solid 1px hsl(0, 0%, 60%);
+  font-size: 1rem;
+  text-align: center;
+  padding: 1rem 1rem;
+  border-radius: 0.25rem;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 1em;
 }

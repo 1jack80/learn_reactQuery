@@ -1,14 +1,15 @@
 import { IssueItem } from "./issueItem.jsx";
 import { useQuery } from "@tanstack/react-query";
 
-export function IssueItemList({ labelFilters }) {
+export function IssueItemList({ labelFilters, status }) {
   const issueQuery = useQuery({
-    queryKey: ["issues", { labelFilters }],
+    queryKey: ["issues", { labelFilters, status }],
     queryFn: () => {
+      const statusFilter = !!status ? `&status=${status}` : "";
       const filterString = labelFilters.map((label) => `labels[]=${label}`).join("&");
-      return fetch(`https:/ui.dev/api/courses/react-query/issues?${filterString}`).then(
-        (res) => res.json()
-      );
+      return fetch(
+        `https:/ui.dev/api/courses/react-query/issues?${filterString}${statusFilter}`
+      ).then((res) => res.json());
     },
   });
 
@@ -18,7 +19,7 @@ export function IssueItemList({ labelFilters }) {
         <p>Could not load issues</p>
       ) : issueQuery.isLoading ? (
         <p>Loading...</p>
-      ) : (
+      ) : issueQuery.isSuccess ? (
         issueQuery.data.map((issue) => (
           <IssueItem
             assignee={issue.assignee}
@@ -31,6 +32,8 @@ export function IssueItemList({ labelFilters }) {
             key={issue.id}
           />
         ))
+      ) : (
+        <p>An error occurred</p>
       )}
     </ul>
   );

@@ -5,6 +5,7 @@ import { LabelList } from "./components/LabelList";
 
 function App() {
   const [labelFilters, setLabelFilters] = useState([]);
+  const [selectedStatus, setStatus] = useState("");
 
   function toggleFilter(labelId) {
     setLabelFilters((currentFilters) => {
@@ -30,7 +31,10 @@ function App() {
 
           <section className="issueSection">
             <h2>Issues List</h2>
-            <IssueItemList labelFilters={labelFilters} />
+            <IssueItemList
+              labelFilters={labelFilters}
+              status={selectedStatus}
+            />
           </section>
         </main>
         <aside>
@@ -45,6 +49,10 @@ function App() {
           </section>
           <section className="statusSection">
             <h3>Status</h3>
+            <StatusSelect
+              value={selectedStatus}
+              onChange={(evt) => setStatus(evt.target.value)}
+            />
           </section>
         </aside>
       </div>
@@ -53,3 +61,29 @@ function App() {
 }
 
 export default App;
+
+const possibleStatus = [
+  { id: "backlog", label: "Backlog" },
+  { id: "todo", label: "To-do" },
+  { id: "inProgress", label: "In Progress" },
+  { id: "done", label: "Done" },
+  { id: "cancelled", label: "Cancelled" },
+];
+
+function StatusSelect({ value, onChange }) {
+  return (
+    <select
+      value={value}
+      onChange={onChange}
+      className="status-select">
+      <option value="">Select a status</option>
+      {possibleStatus.map((status) => (
+        <option
+          key={status.id}
+          value={status.id}>
+          {status.label}
+        </option>
+      ))}
+    </select>
+  );
+}
